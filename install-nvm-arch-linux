@@ -1,0 +1,36 @@
+/* install in fish shell */
+
+/* install bass using fisher */
+
+fisher add edc/bass
+
+/* install nvm with curl */
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+/* add  function in config of fish */
+
+function nvm
+  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+
+/* ----------------- command basic of  nvm -------------------- */
+
+/* install version of nodejs */
+
+nvm install <version_node>
+
+/* show version nodejs */
+
+nvm ls
+
+/* use version nodejs */
+
+nvm use <version_node>
+
+/* create .nvmrc */
+
+You can specify NodeJS version for your project and activate it using a single command:
+
+Create a .nvmrc file inside your project with node version, like 11.6.0.	   
+Use nvm use to activate it
